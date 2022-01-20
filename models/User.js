@@ -62,6 +62,12 @@ const UserSchema = new Schema({
     type: Boolean,
     default: false,
   },
+  favorite_products: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Cloud_Platform',
+    },
+  ],
 });
 
 export default model('User', UserSchema);

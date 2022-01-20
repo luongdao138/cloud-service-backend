@@ -14,8 +14,8 @@ const userController = {
     } else {
       let user = req.user;
       const job_role = await JobRole.findById(user.job_role);
-      const company_size = await CompanySize.findById(user.company.size);
-      const company_industry = await Industry.findById(user.company.industry);
+      const company_size = await CompanySize.findById(user.company?.size);
+      const company_industry = await Industry.findById(user.company?.industry);
 
       console.log({ ...user });
 
@@ -24,7 +24,7 @@ const userController = {
           ...user,
           job_role,
           company: {
-            ...user.company._doc,
+            ...user.company?._doc,
             size: company_size,
             industry: company_industry,
           },

@@ -840,3 +840,8 @@ export const refactorClouds = async () => {
     console.log(error);
   }
 };
+
+export const removeCloudReviews = async () => {
+  await Review.deleteMany({ cloud_platform: '6199a2b119425b127bfbc9d4' });
+  console.log('Delete successfully!');
+};

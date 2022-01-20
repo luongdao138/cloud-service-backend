@@ -135,22 +135,28 @@ const cloudController = {
     let companySizeStats = {};
     let ratingStats = {};
     let industryStats = {};
+
     result.forEach((r) => {
-      if (companySizeStats[r.user.company.size.type]) {
-        companySizeStats[r.user.company.size.type]++;
-      } else {
-        companySizeStats[r.user.company.size.type] = 1;
+      if (r.user.company) {
+        if (companySizeStats[r.user.company.size.type]) {
+          companySizeStats[r.user.company.size.type]++;
+        } else {
+          companySizeStats[r.user.company.size.type] = 1;
+        }
       }
+
       if (ratingStats[r.review_detail.rating]) {
         ratingStats[r.review_detail.rating]++;
       } else {
         ratingStats[r.review_detail.rating] = 1;
       }
 
-      if (industryStats[r.user.company.industry.value]) {
-        industryStats[r.user.company.industry.value]++;
-      } else {
-        industryStats[r.user.company.industry.value] = 1;
+      if (r.user.company) {
+        if (industryStats[r.user.company.industry.value]) {
+          industryStats[r.user.company.industry.value]++;
+        } else {
+          industryStats[r.user.company.industry.value] = 1;
+        }
       }
     });
 

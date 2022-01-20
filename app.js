@@ -51,6 +51,7 @@ const start = async function () {
     await connectDB(process.env.MONGODB_URI);
     // await insertLocationData();
     // await refactorClouds();
+    // await removeCloudReviews();
     await app.listen(PORT);
     console.log(`server listening on port ${PORT}`);
   } catch (error) {
