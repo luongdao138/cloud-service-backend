@@ -70,7 +70,7 @@ const authController = {
 
     const data = await client.verifyIdToken({
       idToken,
-      audience: '290912695082-5v9jqpb177cvnvtcpv3q30sb29s1flal.apps.googleusercontent.com',
+      audience: '290912695082-3ekhf56e8hr53flpvo53gma2ql5d51e4.apps.googleusercontent.com',
     });
 
     const { email, email_verified, name, picture } = data.payload;
